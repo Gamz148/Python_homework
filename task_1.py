@@ -1,32 +1,28 @@
+# 1. Выяснить тип результата следующих выражений:
+#
+#     15 * 3
+#     15 / 3
+#     15 // 2
+#     15 ** 2
+#
+# Техническое задание:
+#
+#     Вывести на экран тип выражения и отдельно проверить является ли полученный тип
+#     целым числом.
 
-duration = int(input('введите число '))
+a = 15 * 3
+b = 15 / 3
+c = 15 // 2
+d = 15 ** 2
+# print(a, type(a))
+# print(b, type(b))
+# print(c, type(c))
+# print(d, type(d))
 
-if duration <= 60:
-    print(duration, 'сек')
+list = [a, b, c, d]
 
-# минуты
-if duration > 60 and duration < 3600:
-    if duration / 60 != 0:
-        min = duration // 60
-        sek = duration - (min * 60)
-        print(min, 'мин', sek, 'сек')
-# часы
-if duration >= 3600 and duration < 86400:
-    if duration / 3600 != 0:
-        hour = duration // 3600
-        min = ((duration - (hour * 3600)) // 60)
-        if min != 0:
-            sek = (duration - (hour * 3600) - (min * 60))
-
-        #    sek = min * 60
-        # print(hour, 'час', min, 'мин')
-        print(hour, 'час', min, 'мин', sek, 'сек')
-
-# DAYS
-if duration >= 86400:
-    if duration / 86400 != 0:
-        day = duration // 86400
-        hour = (duration - (day * 86400)) // 3600  # duration// 3600
-        min = (duration - (day * 86400) - (hour * 3600)) // 60
-        sek = duration - (day * 86400) - (hour * 3600) - min * 60
-        print(day, 'дн', hour, 'час', min, 'мин', sek, 'сек')
+for i in list:
+    if type(i) == int:
+        print(i, 'целое число')
+    else:
+        print(i, 'число не целое!')
